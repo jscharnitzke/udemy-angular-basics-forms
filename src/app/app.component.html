@@ -18,7 +18,11 @@
           <span class="help-block" *ngIf="!username.valid && username.touched">
             Please enter a username!
           </span>
-          <button class="btn btn-default" type="button">
+          <button
+            class="btn btn-default"
+            type="button"
+            (click)="suggestUserName()"
+          >
             Suggest a Username
           </button>
           <div class="form-group">
@@ -65,13 +69,7 @@
         <p>Your reply: {{ answer }}</p>
         <div class="radio" *ngFor="let gender of genders">
           <label>
-            <input
-              required
-              type="radio"
-              [value]="gender"
-              name="gender"
-              [value]="gender"
-            />
+            <input required type="radio" [value]="gender" name="gender" />
             {{ gender }}
           </label>
         </div>
