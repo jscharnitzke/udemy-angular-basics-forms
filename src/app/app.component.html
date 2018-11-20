@@ -12,10 +12,14 @@
               ngModel
               name="username"
               required
+              #username="ngModel"
             />
           </div>
+          <span class="help-block" *ngIf="!username.valid && username.touched">
+            Please enter a username!
+          </span>
           <button class="btn btn-default" type="button">
-            Suggest an Username
+            Suggest a Username
           </button>
           <div class="form-group">
             <label for="email">Mail</label>
@@ -27,8 +31,12 @@
               name="email"
               required
               email
+              #email="ngModel"
             />
           </div>
+          <span class="help-block" *ngIf="!email.valid && email.touched">
+            Please enter a valid email!
+          </span>
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
